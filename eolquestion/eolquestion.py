@@ -88,14 +88,16 @@ class EolQuestionXBlock(XBlock):
 
     @XBlock.handler
     def studio_submit(self, request, suffix=''):
+        self.display_name = request.params['display_name']
         self.type = request.params['type']
         self.index = request.params['index']
         self.text = request.params['text']
         self.theme = request.params['theme']
-        return Response(json.dumps({'result': 'success'}), content_type='application/json')
+        return Response({'result': 'success'}, content_type='application/json')
 
     def get_context(self):
         return {
+            'field_display_name': self.fields['display_name'],
             'field_type': self.fields['type'],
             'field_index': self.fields['index'],
             'field_text': self.fields['text'],

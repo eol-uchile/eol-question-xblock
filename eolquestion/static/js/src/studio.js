@@ -4,11 +4,13 @@ function EolQuestionStudioXBlock(runtime, element) {
   
     $(element).find('.save-button').bind('click', function(e) {
       var form_data = new FormData();
+      var display_name = $(element).find('input[name=display_name]').val();
       var type = $(element).find('select[name=type]').val();
       var index = Math.floor( $(element).find('input[name=index]').val());
       var text = $(element).find('input[name=text]').val();
       text = text ? text : 'Enunciado no especificado';
       var theme = $(element).find('select[name=theme]').val();
+      form_data.append('display_name', display_name);
       form_data.append('type', type);
       form_data.append('index', index);
       form_data.append('text', text);
