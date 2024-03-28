@@ -119,7 +119,7 @@ class TestEolQuestionXBlock(UrlResetMixin, ModuleStoreTestCase):
         self.assertEqual(self.xblock.text, 'Enunciado ')
         self.assertEqual(self.xblock.index, 1)
         self.assertEqual(self.xblock.theme, 'SumaySigue')
-        self.assertEqual(self.xblock.color, '')
+        self.assertEqual(self.xblock.color, 'e71f24')
         self.assertEqual(self.xblock.idspecific, '0')
 
     def test_student_view(self):
